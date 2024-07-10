@@ -1,0 +1,4 @@
+[submodule "src/active-sync"]
+    path = src/active-sync
+	url = git@github.com:findify/active-sync-protobuf.git
+

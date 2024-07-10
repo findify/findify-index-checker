@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+package io.findify.sync;
+
+import "scalapb/scalapb.proto";
+
+option (scalapb.options) = {
+  single_file: false
+  flat_package: true
+  package_name: "io.findify.sync"
+  preserve_unknown_fields: false
+};
+
+enum IndexType {
+  PRODUCT = 0;
+  CONTENT = 1;
+}
+
+message IndexFile {
+  required string path = 1;
+  required string md5_checksum = 2;
+}
+
+message IndexManifest {
+  required string version = 1;
+  repeated IndexFile files = 2;
+}
+
+message IndexPublished {
+  required IndexType index_type = 1;
+  required IndexManifest manifest = 2;
+}
