@@ -28,8 +28,12 @@ Options:
 ## Example
 
 ```bash
-
+/target/debug/findify-index-checker --pulsar-service-url=pulsar://pulsar.us.findify.private:6650 -e prod -m 9795 -t 3
+Pulsar service URL: pulsar://pulsar.us.findify.private:6650, Environment: prod, Topic: persistent://findify/index-updates-product-prod/9795, Timeout: 3s
+Found index (there could be more or never): 0_4_2024-05-14-135007.425
 ```
+
+If the index is found, the status code is `0`; otherwise, it is `1` with error messages.
 
 ## Development
 
